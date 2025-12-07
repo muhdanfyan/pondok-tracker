@@ -221,7 +221,7 @@ fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
         .manage(shared_state.clone())
-        .setup(|app| {
+        .setup(move |app| {
             // Setup system tray
             tray::setup_tray(app)?;
             
